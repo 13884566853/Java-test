@@ -17,5 +17,34 @@
         </dependency>
 
     </dependencies>
-
+    <!--配置Tomcat8仓库-->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>alfresco-public</id>
+            <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>alfresco-public-snapshots</id>
+            <url>https://artifacts.alfresco.com/nexus/content/groups/public-snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat8-maven-plugin</artifactId>
+                <version>3.0-r1655215</version>
+                <configuration>
+                    <!-- 通过maven tomcat8:run运行项目时，访问项目的端口号 -->
+                    <port>80</port>
+                    <!-- 项目访问路径  本例：localhost:9090,  如果配置的aa， 则访问路径为localhost:9090/aa-->
+                    <path>/travel</path>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

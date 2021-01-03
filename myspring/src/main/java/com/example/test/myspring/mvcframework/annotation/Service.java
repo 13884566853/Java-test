@@ -7,7 +7,7 @@ import java.lang.annotation.*;
  * @Date: 2020/12/28 22:36
  * @Description:
  */
-@Target({ElementType.TYPE})
+@Target({ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Service {
